@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FIRST PROJECT</title>
+<style>
+	h1{
+		text-align:center;
+		color:crimson;
+		text-decoration: underline;
+		text-transform: uppercase;
+		font-style: italic;
+		font-weight:700px;
+		font-size: 200px;
+		
+		</style>
+	<style>
+		body{
+			background-color: lime;
+		}
+	</style>
+	
+	<style>
+		img{
+			display:block;
+			margin-right: auto;
+			margin-left: auto;
+			
+		}
+	</style>	
+
+</head>
+
+<body>
+	<h1>
+		First Program
+	</h1>
+	<h2>
+		First Program
+	</h2>
+	<h3>
+		First prorgam
+	</h3>
+	<p>
+		This article is distributed under the terms of the Creative Commons Attribution- NonCommercial-NoDerivs (CC BY-NC-ND) licence.<br/>This licence only allows you to download this work and share it with others as long as you credit tje authors, but can't change the article in any way or use it commercially.<br/>More information and the full terms of the licence here https://creativecommons.org/licences/
+		
+		
+	</p>
+	<h4>
+		First Program
+	</h4>
+	<h5>First Program </h5>
+	<h6>First project </h6>
+	<p>This article is distributed under the terms of the Creative Commons Attribution- NonCommercial-NoDerivs (CC BY-NC-ND) licence.<br/>This licence only allows you to download this work and share it with others as long as you credit tje authors, but can't change the article in any way or use it commercially.<br/>More information and the full terms of the licence here https://creativecommons.org/licences/
+	</p>
+	<hr/>
+	<img src="https://codeop.tech/wp-content/uploads/2022/09/coding-black-females.jpg" alt="woman coding"/>
+</body>
+</html>
