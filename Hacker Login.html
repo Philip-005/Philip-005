@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hacker Style Login</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      background: #000;
+
+      font-family: "Courier New", monospace;
+
+      overflow: hidden;
+       }
+
+    #matrix, #particles-js {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      z-index: -2;
+
+    }
+
+    #particles-js {
+
+      z-index: -1;
+
+    }
+
+    .login-box {
+
+      width: 350px;
+
+      padding: 40px;
+
+      background: rgba(0, 0, 0, 0.8);
+
+      border: 1px solid #0f0;
+
+      border-radius: 15px;
+
+      box-shadow: 0 0 20px #0f0;
+
+      text-align: center;
+
+      color: #0f0;
+
+      z-index: 1;
+
+    }
+
+    .login-box h2 {
+
+      margin-bottom: 20px;
+
+      text-shadow: 0 0 10px #0f0;
+
+    }
+
+    .login-box input {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin: 10px 0;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #111;
+
+      color: #0f0;
+
+      font-size: 16px;
+
+      outline: none;
+
+      box-shadow: inset 0 0 8px #0f0;
+
+    }
+
+    .login-box button {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin-top: 15px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-size: 18px;
+
+      font-weight: bold;
+
+      color: black;
+
+      background: #0f0;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      text-transform: uppercase;
+
+    }
+
+    .login-box button:hover {
+
+      background: #1f1;
+
+      box-shadow: 0 0 15px #0f0;
+
+    }
+
+    .login-box a {
+
+      display: block;
+
+      margin-top: 15px;
+
+      font-size: 14px;
+
+      color: #0f0;
+
+      text-decoration: none;
+
+      transition: 0.2s;
+
+    }
+
+    .login-box a:hover {
+
+      text-shadow: 0 0 8px #0f0;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Matrix Effect -->
+
+  <canvas id="matrix"></canvas>
+
+  <!-- Particles Background -->
+
+  <div id="particles-js"></div>
+
+  <!-- Login Form -->
+
+  <div class="login-box">
+
+    <h2>Hacker Login</h2>
+
+    <form>
+
+      <input type="text" placeholder="Username" required>
+
+      <input type="password" placeholder="Password" required>
+
+      <button type="submit">Access</button>
+
+      <a href="#">Forgot Password?</a>
+
+      <a href="#">Create Account</a>
+
+    </form>
+
+  </div>
+
+  <!-- Matrix Effect Script -->
+
+  <script>
+
+    const canvas = document.getElementById("matrix");
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+
+    canvas.width = window.innerWidth;
+
+    const letters = "01";
+
+    const fontSize = 16;
+
+    const columns = canvas.width / fontSize;
+
+    const drops = [];
+
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+
+    function draw() {
+
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0f0";
+
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+
+       drops[i] = 0;
+
+      }
+
+     drops[i]++;
+
+      }
+
+    }
+
+    setInterval(draw, 33);
+
+  </script>
+
+  <!-- Particles.js -->
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+
+    particlesJS("particles-js", {
+
+      "particles": {
+
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+
+        "color": { "value": "#0f0" },
+
+        "shape": { "type": "circle" },
+
+        "opacity": { "value": 0.5, "random": true },
+
+        "size": { "value": 3, "random": true },
+
+        "line_linked": { "enable": true, "distance": 120, "color": "#0f0", "opacity": 0.4, "width": 1 },
+
+        "move": { "enable": true, "speed": 2 }
+
+      },
+
+      "interactivity": {
+"events": {
+
+          "onhover": { "enable": true, "mode": "grab" },
+
+          "onclick": { "enable": true, "mode": "push" }
+
+        },
+
+        "modes": {
+
+          "grab": { "distance": 150, "line_linked": { "opacity": 0.8 } },
+
+          "push": { "particles_nb": 4 }
+
+        }
+
+      },
+
+      "retina_detect": true
+
+    });
+
+  </script>
+
+</body>
+
+</html>
